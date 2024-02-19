@@ -7,45 +7,38 @@
 
 import SwiftUI
 
+struct AlertItem {
+    let buttonTitle: String
+    let message: String
+}
+
 struct ContentView: View {
     
-    @State var showingAlert1 = false
-    @State var showingAlert2 = false
+    @State var showingAlert = false
+    @State var alertItem: AlertItem?
     
     var body: some View {
         VStack {
             Button(action: {
-                showingAlert1 = true
+                showingAlert = true
+                alertItem = AlertItem(buttonTitle: "Button 1", message: "This is Button 1!")
             }, label: {
                 Text("Button1")
             })
-            .alert("Alert Title1", isPresented: $showingAlert1) {
-                Button("Done", role: .none) {
-                    print("Done")
-                }
-                Button("Cancel", role: .cancel) {
-                    print("Cancel")
-                }
-            } message: {
-                Text("Message1")
-            }
             Button(action: {
-                showingAlert2 = true
+                showingAlert = true
+                alertItem = AlertItem(buttonTitle: "Button 2", message: "This is Button 2!")
             }, label: {
                 Text("Button2")
             })
-            .alert("Alert Title2", isPresented: $showingAlert2) {
-                Button("Done", role: .none) {
-                    print("Done")
-                }
-                Button("Cancel", role: .cancel) {
-                    print("Cancel")
-                }
-            } message: {
-                Text("Message2")
-            }
         }
-        .padding()
+        .alert("Alert Title", isPresented: $showingAlert, presenting: alertItem) { alertItem in
+            Button(alertItem.buttonTitle, role: .none) {
+                print(alertItem.buttonTitle)
+            }
+        } message: { alertItem in
+            Text(alertItem.message)
+        }
     }
 }
 
