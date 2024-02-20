@@ -16,19 +16,18 @@ struct ContentView: View {
             Button(action: {
                 name = "Pikachu"
             }, label: {
-                Spacer()
                 HStack {
                     Image("Pikachu")
                         .resizable()
+                        .scaledToFit()
                         .frame(width: 100, height: 100)
                     Text("Tap Me!!")
                 }
-                Spacer()
+                .padding()
+                .border(Color.black, width: 2)
             })
-            .border(Color.black)
-            .frame(width: 200)
+            .buttonStyle(PlainButtonStyle())
         }
-        .padding()
     }
 }
 
