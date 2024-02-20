@@ -38,3 +38,16 @@
         }
     }
     ```
+
+## Knock19
+- 使い回すことが可能なViewは別ファイルとして切り出してあげるのが吉。
+- GeometryReader
+  - コンテンツを独自のサイズと座標空間の関数として定義するコンテナビュー。
+  - このビューは、親レイアウトに柔軟な優先サイズを返します。
+- 子ビューから親ビューにデータを渡す仕組みとして、PreferenceKeyを使用する。
+  - 頻繁に使用することがある。
+  - https://qiita.com/takehilo/items/2499c632c2e0e5cdcb06
+- .onPreferenceChangeモディファイアに渡される値は、以下の引数valueで渡された値となる。
+  ```swift
+  Color.clear.preference(key: SizePreference.self, value: geometry.size)
+  ```
