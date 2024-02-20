@@ -8,31 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var text: String = ""
-    @State var isAlertShown: Bool = false
-    @State var isPresented: Bool = false
+    @State var numberString: String = ""
+    @State var showingAlert: Bool = false
+    @State var showingSheet: Bool = false
     
     var body: some View {
         VStack {
-            TextField(" Input Number", text: $text)
-                .border(Color.gray, width: 0.5)
+            TextField("Input Number", text: $numberString)
+                .padding()
+                .textFieldStyle(RoundedBorderTextFieldStyle())
             Button {
-                if Int(text) != nil {
-                    isPresented = true
-                } else {
-                    isAlertShown = true
+                guard Double(numberString) != nil else {
+                    showingAlert = true
+                    return
                 }
+                showingSheet = true
             } label: {
                 Text("Show Sheet")
             }
         }
-        .alert("Title", isPresented: $isAlertShown) {
-            Button("Back", role: .none) {
-                print("Tapped Alert Button.")
+        .alert(Text("Error"), isPresented: $showingAlert) {
+            Button("Close", role: .none) {
+                print("Tapped Close Button.")
             }
         } message: {
-            Text("This is Alert")
+            Text("Please input number")
         }
+        .sheet(isPresented: $showingSheet, content: {
+            Text("\(numberString) can convert to Double")
+        })
     }
 }
 
