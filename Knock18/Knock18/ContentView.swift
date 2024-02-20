@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isActive: Bool = false
+    
     var body: some View {
-        VStack {
-            Button(action: {
-                
-            }, label: {
-                Text("Tap Me!!")
-            })
+        NavigationStack {
+            VStack {
+                Button(action: {
+                    isActive = true
+                }, label: {
+                    Text("Tap Me!!")
+                })
+            }
+            .navigationDestination(isPresented: $isActive) {
+                Text("Second View")
+            }
         }
-        .padding()
     }
 }
 
