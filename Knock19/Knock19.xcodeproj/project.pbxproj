@@ -11,6 +11,7 @@
 		98A874B22B852A6800997727 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A874B12B852A6800997727 /* ContentView.swift */; };
 		98A874B42B852A6A00997727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A874B32B852A6A00997727 /* Assets.xcassets */; };
 		98A874B72B852A6A00997727 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A874B62B852A6A00997727 /* Preview Assets.xcassets */; };
+		98A874BE2B852C2300997727 /* ShowMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A874BD2B852C2300997727 /* ShowMoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		98A874B12B852A6800997727 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98A874B32B852A6A00997727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98A874B62B852A6A00997727 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98A874BD2B852C2300997727 /* ShowMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				98A874AF2B852A6800997727 /* Knock19App.swift */,
 				98A874B12B852A6800997727 /* ContentView.swift */,
+				98A874BD2B852C2300997727 /* ShowMoreView.swift */,
 				98A874B32B852A6A00997727 /* Assets.xcassets */,
 				98A874B52B852A6A00997727 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98A874B22B852A6800997727 /* ContentView.swift in Sources */,
+				98A874BE2B852C2300997727 /* ShowMoreView.swift in Sources */,
 				98A874B02B852A6800997727 /* Knock19App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
