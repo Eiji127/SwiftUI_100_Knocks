@@ -10,3 +10,31 @@
 - alertの表示は.alert(_:,isPresented:)で行う。
 - TextFieldのスタイスは.textFieldStyle()というmodifierで指定する。
   - RoundedBorderTextFieldStyle()を指定することで、丸みの帯びたTextFieldとなる。
+
+## Knock18
+- Push遷移を行いたいときは以下の方法がある。
+  - NavigationViewとNavigaitonLinkを用いた方法
+    ```swift
+    NavigationView {
+            List(fruits, id: \.self) { fruit in
+                NavigationLink(destination: SecondView(fruit: fruit)) {
+                    Text(fruit)
+            }
+        }
+    }
+    ```
+  - NavigationStackと.navigationDestination(isPresented:)を用いた方法
+    ```swift
+    NavigationStack {
+        VStack {
+            Button(action: {
+                isActive = true
+            }, label: {
+                Text("Tap Me!!")
+            })
+        }
+        .navigationDestination(isPresented: $isActive) {
+            Text("Second View")
+        }
+    }
+    ```
