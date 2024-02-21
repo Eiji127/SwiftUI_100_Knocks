@@ -51,3 +51,15 @@
   ```swift
   Color.clear.preference(key: SizePreference.self, value: geometry.size)
   ```
+
+## Knock20
+- 文字の色は.foregroundStyle(:)モディファイアで指定できる。
+  ```swift
+  Text(" ❤️ ")
+    .foregroundStyle(Color.red)
+  ```
+- フォントサイズは.font(:)モディファイアで指定できる。
+  ```swift
+  Text(" ❤️ ")
+    .font(.system(size: 20).bold())
+  ```
