@@ -10,41 +10,24 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Button(action: {
-                
-            }, label: {
+            CardView {
                 Text("Snorlax")
-                    .padding()
-            })
-            .border(Color.gray)
+            }
             
-            Button(action: {
-                
-            }, label: {
+            CardView {
                 Image("Pikachu")
                     .resizable()
-                    .frame(width: 50, height: 50)
-                    .padding()
-            })
-            .border(Color.gray)
+                    .frame(width: 60, height: 60)
+            }
             
-            Button(action: {
-                
-            }, label: {
+            CardView(color: Color.red.opacity(0.4)) {
                 Text("RedShadow")
-                    .padding()
-            })
-            .border(Color.gray)
+            }
             
-            Button(action: {
-                
-            }, label: {
+            CardView(color: Color.green.opacity(0.4), radius: 24) {
                 Text("BigShadow")
-                    .padding()
-            })
-            .border(Color.gray)
+            }
         }
-        .padding()
     }
 }
 
