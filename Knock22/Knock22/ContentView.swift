@@ -11,22 +11,20 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Snorlax")
-                .padding(16)
-                .background(Color.white)
-                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .card()
             
             Image("Pikachu")
                 .resizable()
                 .frame(width: 60, height: 60)
-                .padding(16)
+                .card()
             
             Text("RedShadow")
-                .padding(16)
+                .card(color: Color.red.opacity(0.4))
             
             Text("BigShadow")
-                .padding(16)
+                .card(color: Color.green.opacity(0.4), 
+                      radius: 24)
         }
-        .padding()
     }
 }
 
