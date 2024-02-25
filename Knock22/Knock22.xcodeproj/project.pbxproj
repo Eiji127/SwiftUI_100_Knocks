@@ -11,6 +11,8 @@
 		98A875042B8B4C8C00997727 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A875032B8B4C8C00997727 /* ContentView.swift */; };
 		98A875062B8B4C8D00997727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A875052B8B4C8D00997727 /* Assets.xcassets */; };
 		98A875092B8B4C8D00997727 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A875082B8B4C8D00997727 /* Preview Assets.xcassets */; };
+		98A875102B8B52DE00997727 /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8750F2B8B52DE00997727 /* CardViewModifier.swift */; };
+		98A875122B8B537000997727 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A875112B8B537000997727 /* View+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		98A875032B8B4C8C00997727 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98A875052B8B4C8D00997727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98A875082B8B4C8D00997727 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98A8750F2B8B52DE00997727 /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
+		98A875112B8B537000997727 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				98A875012B8B4C8C00997727 /* Knock22App.swift */,
 				98A875032B8B4C8C00997727 /* ContentView.swift */,
+				98A8750F2B8B52DE00997727 /* CardViewModifier.swift */,
+				98A875112B8B537000997727 /* View+.swift */,
 				98A875052B8B4C8D00997727 /* Assets.xcassets */,
 				98A875072B8B4C8D00997727 /* Preview Content */,
 			);
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98A875122B8B537000997727 /* View+.swift in Sources */,
+				98A875102B8B52DE00997727 /* CardViewModifier.swift in Sources */,
 				98A875042B8B4C8C00997727 /* ContentView.swift in Sources */,
 				98A875022B8B4C8C00997727 /* Knock22App.swift in Sources */,
 			);
