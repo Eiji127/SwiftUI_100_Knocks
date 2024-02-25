@@ -63,3 +63,25 @@
   Text(" ❤️ ")
     .font(.system(size: 20).bold())
   ```
+
+## Knock21
+- where句は、型パラメータの追加の条件を指定するために使用している。
+  - 具体的には、Content という型パラメータに対して、条件として Content 型が View プロトコルを満たす必要があります。つまり、Content に指定される型は、SwiftUIのビューとして振る舞える必要がある。。
+  ```swift
+  struct CardView<Content>: View where Content: View {
+    ...
+    let content: () -> Content
+  }
+
+  struct ContentView: View {
+    var body: some View {
+      CardView {
+        Text("Snorlax")
+      }
+    }
+  }
+  ```
+- Viewに対して影をつけたいときは、.shadowモディファイアを使用すると良い。
+- Viewに丸みをもたせたいときは、.clipShapeモディファイアを使用すると良い。
+  - Xcode15から、.cornerRadiusモディファイアはdeprecatedとなっているため、.clipShapeを使用するのが良い。
+    https://developer.apple.com/documentation/swiftui/view/cornerradius(_:antialiased:)
