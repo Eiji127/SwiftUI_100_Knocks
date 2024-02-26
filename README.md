@@ -114,3 +114,23 @@
       }
     }
     ```
+## Knock23
+- リスト内の要素を削除したいときは、.onDeleteモディファイアと、EditButton()を活用する。
+- .navigationBarItems(:)はdeprecatedとなっているため、代わりに.toolbar()を活用する。
+  ```swift
+  // Deprecated
+   List {
+    ...
+  }
+  .navigationBarItems(trailing: EditButton())
+
+  // Suggested
+  List {
+    ...
+  }
+  .toolbar {
+    ToolbarItem(placement: .primaryAction) {
+      EditButton()
+    }
+  }
+  ```
