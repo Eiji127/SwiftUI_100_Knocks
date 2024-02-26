@@ -85,3 +85,32 @@
 - Viewに丸みをもたせたいときは、.clipShapeモディファイアを使用すると良い。
   - Xcode15から、.cornerRadiusモディファイアはdeprecatedとなっているため、.clipShapeを使用するのが良い。
     https://developer.apple.com/documentation/swiftui/view/cornerradius(_:antialiased:)
+
+## knock22
+- ViewModifierで指定する場合、以下の流れで作成する。
+  - まず、追加したい特徴をもったViewを返す関数を有するカスタムViewModifierを追加する。
+    ```swift
+    struct CardViewModifier: ViewModifier {
+      let color: Color
+      let radius: CGFloat
+      func body(content: Content) -> some View {
+          content
+            .padding(16)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .shadow(color: color, radius: radius, x: 4, y: 4)
+            .padding(radius + 8)
+      }
+    }
+    ```
+  - 次に、Viewに対して作成したViewModifierをmodifier()の引数に指定して返してあげる。
+    ```swift
+    extension View {
+      func card(
+        color: Color = Color.gray.opacity(0.4),
+        radius: CGFloat = 8
+      ) -> some View {
+        self.modifier(CardViewModifier(color: color, radius: radius))
+      }
+    }
+    ```
