@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var people = ["Paul", "Talor", "Adele"]
-    @State var editMode: EditMode = .inactive
     
     var body: some View {
         NavigationStack {
@@ -18,38 +17,18 @@ struct ContentView: View {
                 ForEach(people, id: \.self) { human in
                     Text(human)
                 }
-                .onDelete(perform: peopleRemove)
+                .onDelete(perform: delete)
             }
-            .navigationBarItems(
-                trailing: editButton()
-            )
-            .environment(\.editMode, self.$editMode)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    EditButton()
+                }
+            }
         }
     }
     
-    func toggleEditMode() {
-        if $editMode.wrappedValue.isEditing == true {
-            $editMode.wrappedValue = .inactive
-        } else {
-            $editMode.wrappedValue = .active
-        }
-    }
-    
-    func peopleRemove(offsets: IndexSet) {
+    func delete(at offsets: IndexSet) {
         people.remove(atOffsets: offsets)
-    }
-    
-    @ViewBuilder
-    func editButton() -> some View {
-        Button(action: {
-            toggleEditMode()
-        }, label: {
-            if $editMode.wrappedValue.isEditing == true {
-                Text("Done")
-            } else {
-                Text("Edit")
-            }
-        })
     }
 }
 
