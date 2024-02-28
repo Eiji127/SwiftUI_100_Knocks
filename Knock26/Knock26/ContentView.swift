@@ -9,28 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isPresented: Bool = false
-    @State var pokemon: String = ""
     
-    let pokemons: [String] = ["Snorlax", "Pikachu", "Slowpoke"]
+    let pokemons: [Pokemon] = [Pokemon(id: 143, name: "Snorlax", type: .normal),
+                               Pokemon(id: 25, name: "Pikachu", type: .electric),
+                               Pokemon(id: 79, name: "Slowpoke", type: .water)]
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(pokemons, id: \.self) { pokemon in
-                    Button {
-                        self.pokemon = pokemon
-                        isPresented = true
-                    } label: {
-                        Text(pokemon)
+            List(pokemons) { pokemon in
+                NavigationLink {
+                    switch pokemon.type {
+                    case .normal:
+                        NormalView(pokemon: pokemon)
+                    case .electric:
+                        ElectricView(pokemon: pokemon)
+                    case .water:
+                        WaterView(pokemon: pokemon)
+                    default:
+                        Text("Ohter Type")
                     }
-                }
-            }
-            .navigationDestination(isPresented: $isPresented) {
-                if pokemon == "Snorlax" {
-                    SecondView(pokemon: pokemon)
-                }
-                if pokemon == "Pikachu" {
-                    ThirdView(pokemon: pokemon)
+                } label: {
+                    Text(pokemon.name)
                 }
             }
         }
