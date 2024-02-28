@@ -12,6 +12,7 @@
 		98A8755A2B8EB4E600997727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A875592B8EB4E600997727 /* Assets.xcassets */; };
 		98A8755D2B8EB4E600997727 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A8755C2B8EB4E600997727 /* Preview Assets.xcassets */; };
 		98A875642B8EB7C500997727 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A875632B8EB7C500997727 /* SecondView.swift */; };
+		98A875662B8EB9C300997727 /* MyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A875652B8EB9C300997727 /* MyProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		98A875592B8EB4E600997727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98A8755C2B8EB4E600997727 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98A875632B8EB7C500997727 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		98A875652B8EB9C300997727 /* MyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				98A875552B8EB4E300997727 /* Knock25App.swift */,
 				98A875572B8EB4E300997727 /* ContentView.swift */,
 				98A875632B8EB7C500997727 /* SecondView.swift */,
+				98A875652B8EB9C300997727 /* MyProtocol.swift */,
 				98A875592B8EB4E600997727 /* Assets.xcassets */,
 				98A8755B2B8EB4E600997727 /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 				98A875642B8EB7C500997727 /* SecondView.swift in Sources */,
 				98A875582B8EB4E300997727 /* ContentView.swift in Sources */,
 				98A875562B8EB4E300997727 /* Knock25App.swift in Sources */,
+				98A875662B8EB9C300997727 /* MyProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

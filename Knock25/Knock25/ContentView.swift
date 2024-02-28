@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View, MyProtocol {
+    
     @State var isPresented: Bool = false
     
     var body: some View {
@@ -20,9 +21,13 @@ struct ContentView: View {
                 }
             }
             .navigationDestination(isPresented: $isPresented) {
-                SecondView()
+                SecondView(delegate: self)
             }
         }
+    }
+    
+    func hoge() {
+        print("Call ContentView Function")
     }
 }
 
