@@ -178,3 +178,18 @@
     }
   }
   ```
+## Knock25
+- 前画面の関数を呼び出したいときはUIKitベースの開発と同様に、delegateメソッドを用意してあげると良い。
+  ```swift
+  struct SecondView: View {
+    var delegate: MyProtocol
+    
+    var body: some View {
+      Button {
+        delegate.hoge()
+      } label: {
+        Text("Tapped Delegate Method")
+      }
+    }
+  }
+  ```
