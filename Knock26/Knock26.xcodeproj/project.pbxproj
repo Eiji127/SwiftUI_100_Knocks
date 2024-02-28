@@ -11,8 +11,10 @@
 		98A875762B8EBE3800997727 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A875752B8EBE3800997727 /* ContentView.swift */; };
 		98A875782B8EBE3B00997727 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A875772B8EBE3B00997727 /* Assets.xcassets */; };
 		98A8757B2B8EBE3B00997727 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A8757A2B8EBE3B00997727 /* Preview Assets.xcassets */; };
-		98A875842B8EC00700997727 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A875832B8EC00700997727 /* SecondView.swift */; };
-		98A875862B8EC04D00997727 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A875852B8EC04D00997727 /* ThirdView.swift */; };
+		98A875882B8ECEB100997727 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A875872B8ECEB100997727 /* Pokemon.swift */; };
+		98A8758C2B8ED24900997727 /* NormalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8758B2B8ED24900997727 /* NormalView.swift */; };
+		98A8758E2B8ED28200997727 /* ElectricView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8758D2B8ED28200997727 /* ElectricView.swift */; };
+		98A875902B8ED2BC00997727 /* WaterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A8758F2B8ED2BC00997727 /* WaterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +23,10 @@
 		98A875752B8EBE3800997727 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98A875772B8EBE3B00997727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98A8757A2B8EBE3B00997727 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		98A875832B8EC00700997727 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
-		98A875852B8EC04D00997727 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
+		98A875872B8ECEB100997727 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		98A8758B2B8ED24900997727 /* NormalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalView.swift; sourceTree = "<group>"; };
+		98A8758D2B8ED28200997727 /* ElectricView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricView.swift; sourceTree = "<group>"; };
+		98A8758F2B8ED2BC00997727 /* WaterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +61,10 @@
 			children = (
 				98A875732B8EBE3800997727 /* Knock26App.swift */,
 				98A875752B8EBE3800997727 /* ContentView.swift */,
-				98A875832B8EC00700997727 /* SecondView.swift */,
-				98A875852B8EC04D00997727 /* ThirdView.swift */,
+				98A875872B8ECEB100997727 /* Pokemon.swift */,
+				98A8758B2B8ED24900997727 /* NormalView.swift */,
+				98A8758D2B8ED28200997727 /* ElectricView.swift */,
+				98A8758F2B8ED2BC00997727 /* WaterView.swift */,
 				98A875772B8EBE3B00997727 /* Assets.xcassets */,
 				98A875792B8EBE3B00997727 /* Preview Content */,
 			);
@@ -143,10 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98A875862B8EC04D00997727 /* ThirdView.swift in Sources */,
-				98A875842B8EC00700997727 /* SecondView.swift in Sources */,
+				98A875882B8ECEB100997727 /* Pokemon.swift in Sources */,
 				98A875762B8EBE3800997727 /* ContentView.swift in Sources */,
 				98A875742B8EBE3800997727 /* Knock26App.swift in Sources */,
+				98A8758E2B8ED28200997727 /* ElectricView.swift in Sources */,
+				98A875902B8ED2BC00997727 /* WaterView.swift in Sources */,
+				98A8758C2B8ED24900997727 /* NormalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
