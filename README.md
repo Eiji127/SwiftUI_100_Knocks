@@ -134,3 +134,46 @@
     }
   }
   ```
+## Knock24
+- リスト表示を行うとき、ForEachを使用せずに、以下のようにListのclousure内で配列の要素を抽出することができる。
+  ```swift
+  let pokemons: [Pokemon] = [Pokemon(id: 143, name: "Snorlax"),
+                               Pokemon(id: 25, name: "Pikachu"),
+                               Pokemon(id: 138, name: "Psyduck"),
+                               Pokemon(id: 9, name: "Blastoise"),
+                               Pokemon(id: 79, name: "Slowpoke")]
+  var body: some View {
+    List(pokemons) { pokemon in
+      ...
+    }
+  }
+  ```
+- 以下のようにpokemonの値をalert側に渡し、alertで値を表示したとき、参照がおかしくなり、配列内の値がランダムに表示される。
+  ```swift
+  List {
+    ForEach(pokemons, id: \.self) { pokemon in
+      Button(action: {
+        isAlertPresented = true
+      }, label: {
+        Text(pokemon)
+      })
+      .alert(Text(pokemon), isPresented: $isAlertPresented) {
+        Button("Close", role: .none) {
+          print("Tapped Close Button.")
+        }
+      }
+    }
+  }
+  ```
+- alertに値を渡してあげるときは、渡す用の変数をView内で定義してあげ、.alertモディファイアのpresenting引数に渡してあげるのが良い。
+  ```swift
+  @State var pokemon: Pokemon?
+
+  var body: some View {
+  List(pokemons) { pokemon in
+    ... 
+  }
+  .alert(Text("Alert"), isPresented: $isAlertPresented, presenting: pokemon) { pokemon in
+    ...
+  }
+  ```
