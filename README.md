@@ -193,3 +193,26 @@
     }
   }
   ```
+## Knock26
+- .navigationDestinationモディファイアのクロージャー内では、.alertモディファイアのように、View内で定義したOptinal型の変数は渡せない。また、クラッシュする。
+  ```swift
+  // .alertモディファイアのとき
+  .alert(Text("Alert"), isPresented: $isAlertPresented, presenting: pokemon) { pokemon in // ✅ Suceeded
+    ...
+  }
+  
+  // .navigationDestinationモディファイアのとき
+  .navigationDestination(isPresented: $isPresented) {
+    switch self.pokemon.type { // ⛔️ Error: Value of optional type 'Pokemon?' must be unwrapped to refer to member 'type' of wrapped base type 'Pokemon'
+    case .normal:
+      NormalView(pokemon: self.pokemon)
+    case .electric:
+      ElectricView(pokemon: self.pokemon)
+    case .water:
+      WaterView(pokemon: self.pokemon)
+    default:
+      Text("Ohter Type")
+    }
+  }
+  ```
+- Listでそれぞれの画面に遷移させたいときは列挙型(Enum)とswitch文を活用すると良い。
