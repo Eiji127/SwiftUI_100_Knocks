@@ -86,7 +86,7 @@
   - Xcode15から、.cornerRadiusモディファイアはdeprecatedとなっているため、.clipShapeを使用するのが良い。
     https://developer.apple.com/documentation/swiftui/view/cornerradius(_:antialiased:)
 
-## knock22
+## Knock22
 - ViewModifierで指定する場合、以下の流れで作成する。
   - まず、追加したい特徴をもったViewを返す関数を有するカスタムViewModifierを追加する。
     ```swift
@@ -170,10 +170,11 @@
   @State var pokemon: Pokemon?
 
   var body: some View {
-  List(pokemons) { pokemon in
-    ... 
-  }
-  .alert(Text("Alert"), isPresented: $isAlertPresented, presenting: pokemon) { pokemon in
-    ...
+    List(pokemons) { pokemon in
+      ... 
+    }
+    .alert(Text("Alert"), isPresented: $isAlertPresented, presenting: pokemon) { pokemon in
+      ...
+    }
   }
   ```
