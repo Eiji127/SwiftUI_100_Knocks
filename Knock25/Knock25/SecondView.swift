@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct SecondView: View {
+    var delegate: MyProtocol
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            delegate.hoge()
+        } label: {
+            Text("Tapped Delegate Method")
+        }
     }
-}
-
-#Preview {
-    SecondView()
 }
