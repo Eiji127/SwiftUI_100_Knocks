@@ -8,29 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var pokemons: [String] = ["Snorlax",
-                                     "Pikachu",
-                                     "Psyduck",
-                                     "Blastoise",
-                                     "Slowpoke"]
+    let pokemons: [Pokemon] = [Pokemon(id: 143, name: "Snorlax"),
+                               Pokemon(id: 25, name: "Pikachu"),
+                               Pokemon(id: 138, name: "Psyduck"),
+                               Pokemon(id: 9, name: "Blastoise"),
+                               Pokemon(id: 79, name: "Slowpoke")]
     @State var isAlertPresented: Bool = false
+    @State var pokemon: Pokemon?
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(pokemons, id: \.self) { pokemon in
-                    Button(action: {
-                        isAlertPresented = true
-                    }, label: {
-                        Text(pokemon)
-                    })
-                    .alert(Text("Alart"), isPresented: $isAlertPresented) {
-                        Button("Close", role: .none) {
-                            print("Tapped Close Button.")
-                        }
-                    }
-                }
+        List(pokemons) { pokemon in
+            Button {
+                self.pokemon = pokemon
+                isAlertPresented = true
+            } label: {
+                Text(pokemon.name)
             }
+        }
+        .alert(Text("Alert"), isPresented: $isAlertPresented, presenting: pokemon) { pokemon in
+            Button(pokemon.name, role: .none) {
+                print("Close")
+            }
+        } message: { pokemon in
+            Text(pokemon.name)
         }
     }
 }
