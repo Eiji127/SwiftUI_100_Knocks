@@ -216,3 +216,27 @@
   }
   ```
 - Listでそれぞれの画面に遷移させたいときは列挙型(Enum)とswitch文を活用すると良い。
+## Knock27
+- PickerViewを表示するときは、Picker()を使用する。
+  ```swift
+  Picker(selection: $hoge, label: EmptyView()) {
+    ...
+  }
+  ```
+- .pickerStyleモディファイアを使用する。
+  ```swift
+  Picker(selection: $hoge, label: EmptyView()) {
+    ...
+  }
+  .pickerStyle(WheelPickerStyle())
+  ```
+- Picker内で指定した値は、publisherとして.onReceiveモディファイアの引数としてセットし、値を他のAPIに渡してあげる。
+  ```swift
+  Picker(selection: $hoge, label: EmptyView()) {
+    ...
+  }
+  .onReceive([selectedHour].publisher.first()) { (value) in
+    print("hour: \(value)")
+  }
+  ```
+
