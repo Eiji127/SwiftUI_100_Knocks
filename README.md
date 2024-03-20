@@ -218,7 +218,7 @@
 - Listでそれぞれの画面に遷移させたいときは列挙型(Enum)とswitch文を活用すると良い。
 ## Knock27
 - PickerViewを表示するときは、Picker()を使用する。
-  ```swift
+  ```swift:
   Picker(selection: $hoge, label: EmptyView()) {
     ...
   }
@@ -231,7 +231,7 @@
   .pickerStyle(WheelPickerStyle())
   ```
 - Picker内で指定した値は、publisherとして.onReceiveモディファイアの引数としてセットし、値を他のAPIに渡してあげる。
-  ```swift
+  ```swif
   Picker(selection: $hoge, label: EmptyView()) {
     ...
   }
@@ -252,3 +252,12 @@ VStack {
     SecondView()
 })
 ```
+### Knock29
+- VStackあるいはHStackに対して、画面全体的に操作を加えたいときはframeモディファイアの引数maxWidthおよびmaxHeightに.infinityを指定する。
+  ```swift
+  VStack {
+    ...
+  }
+  .frame(maxWidth: .infinity, maxHeight: .infinity)
+  .background(Color.gray)
+  ```
