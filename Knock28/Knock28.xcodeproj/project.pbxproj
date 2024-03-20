@@ -11,6 +11,7 @@
 		98D98DF42BA864E5005B9320 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D98DF32BA864E5005B9320 /* ContentView.swift */; };
 		98D98DF62BA864E7005B9320 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D98DF52BA864E7005B9320 /* Assets.xcassets */; };
 		98D98DF92BA864E7005B9320 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D98DF82BA864E7005B9320 /* Preview Assets.xcassets */; };
+		98D98E002BAB594F005B9320 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D98DFF2BAB594F005B9320 /* SecondView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		98D98DF32BA864E5005B9320 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98D98DF52BA864E7005B9320 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98D98DF82BA864E7005B9320 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98D98DFF2BAB594F005B9320 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				98D98DF12BA864E5005B9320 /* Knock28App.swift */,
 				98D98DF32BA864E5005B9320 /* ContentView.swift */,
+				98D98DFF2BAB594F005B9320 /* SecondView.swift */,
 				98D98DF52BA864E7005B9320 /* Assets.xcassets */,
 				98D98DF72BA864E7005B9320 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D98E002BAB594F005B9320 /* SecondView.swift in Sources */,
 				98D98DF42BA864E5005B9320 /* ContentView.swift in Sources */,
 				98D98DF22BA864E5005B9320 /* Knock28App.swift in Sources */,
 			);
