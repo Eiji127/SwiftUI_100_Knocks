@@ -239,4 +239,16 @@
     print("hour: \(value)")
   }
   ```
-
+## Knock28
+- sheetをフルスクリーン表示させたいときはfullScreenCover(isPresented:,content:)モディファイアを使用する。
+```swift
+VStack {
+    Button {
+        isFullScreenPresented = true
+    } label: {
+        Text("Tap me!")
+    }
+}.fullScreenCover(isPresented: $isFullScreenPresented, content: {
+    SecondView()
+})
+```
