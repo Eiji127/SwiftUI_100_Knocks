@@ -261,3 +261,14 @@ VStack {
   .frame(maxWidth: .infinity, maxHeight: .infinity)
   .background(Color.gray)
   ```
+## Knock30
+- NavigationBarのTitleを指定するときは、.navigationBarTitle()を使用する。
+- NavigationBarを非表示にしたいときは、以下のような.toolBarモディファイアを用いて、引数に.hidden、.navigationBarを指定する。
+  ```swift
+  NavigationStack {
+    Text("No Navigation Bar")
+        .navigationBarTitle("Not Showing Title")
+        .toolbar(.hidden, for: .navigationBar)
+  }
+  ```
+-  NavigationBarの非表示には、.navigationBarHidden(true)を付与しても可能だが、deprecatedとなっているので注意！
