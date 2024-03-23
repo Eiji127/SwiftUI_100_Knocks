@@ -15,6 +15,13 @@ struct ContentView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .landscapeLeft) {
     ContentView()
 }
+
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//            .previewInterfaceOrientation(.landscapeLeft)
+//    }
+//}
