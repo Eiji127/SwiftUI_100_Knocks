@@ -272,3 +272,24 @@ VStack {
   }
   ```
 -  NavigationBarの非表示には、.navigationBarHidden(true)を付与しても可能だが、deprecatedとなっているので注意！
+## Knock31
+- Previewを横向きにしたいときは#Previewのマクロの引数traitsに.landscapeLeftを渡してあげるのが良い。
+  ```swift
+  #Preview(traits: .landscapeLeft) {
+    ContentView()
+  }
+  ```
+- #Previewマクロに対して、.previewInterfaceOrientationモディファイアは無効となるため、注意が必要。
+  ```swift
+  #Preview {
+    ContentView()
+        .previewInterfaceOrientation(.landscapeLeft) // ⛔️ Previewには反映されず横向けにはならない！
+  }
+
+  struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .previewInterfaceOrientation(.landscapeLeft) // ✅ Previewに反映され、横向きとなる
+    }
+  }  
+  ```
