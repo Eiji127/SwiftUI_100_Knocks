@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var text = "Shake me!"
+    @State var message = "Shake me!"
     
     var body: some View {
         VStack {
-            Text(text)
+            Text(message)
+                .onReceive(NotificationCenter.default.publisher(for: .deviceDidShakeNotification), perform: { _ in
+                    message = "Device Did Shake"
+                })
         }
         .padding()
     }
@@ -20,4 +23,15 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+extension NSNotification.Name {
+    public static let deviceDidShakeNotification = NSNotification.Name("DeviceDidShakeNotification")
+}
+
+extension UIWindow {
+    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        super.motionEnded(motion, with: event)
+        NotificationCenter.default.post(name: .deviceDidShakeNotification, object: event)
+    }
 }
