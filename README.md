@@ -293,3 +293,34 @@ VStack {
     }
   }  
   ```
+## Knock32
+- 何かしらのデータ (イベント) を検知する際に使用するのが、.onReceiveモディファイアとなる。
+  - 今回だと、NotificationCenter関連のイベントを取得している。
+- 端末のシェイクを検知するときは以下のものを設定すると良い。
+  ```swift
+  struct ContentView: View {
+    @State var message = "Shake me!"
+    
+    var body: some View {
+        VStack {
+            Text(message)
+                .onReceive(NotificationCenter.default.publisher(for: .deviceDidShakeNotification), perform: { _ in
+                    ...
+                })
+        }
+        .padding()
+    }
+  }
+
+  
+  extension NSNotification.Name {
+    public static let deviceDidShakeNotification = NSNotification.Name("DeviceDidShakeNotification")
+  }
+
+  extension UIWindow {
+    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        super.motionEnded(motion, with: event)
+        NotificationCenter.default.post(name: .deviceDidShakeNotification, object: event)
+    }
+  }
+  ```
