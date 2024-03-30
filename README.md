@@ -324,7 +324,7 @@ VStack {
     }
   }
   ```
-#Knock33
+## Knock33
 - CollectionViewのようなViewを構築したいときは、ScrollView × LazyVGridを使用する。
   ```swift
   let columns: [GridItem] = [GridItem(.fixed(80)),
