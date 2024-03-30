@@ -324,3 +324,25 @@ VStack {
     }
   }
   ```
+#Knock33
+- CollectionViewのようなViewを構築したいときは、ScrollView × LazyVGridを使用する。
+  ```swift
+  let columns: [GridItem] = [GridItem(.fixed(80)),
+                             GridItem(.fixed(80)),
+                             GridItem(.fixed(80)),
+                             GridItem(.fixed(80))]
+  var body: some View {
+    ScrollView {
+        LazyVGrid(columns: columns) {
+            ForEach(0..<100, id: \.self) { index in
+                Text("\(index)")
+                    .foregroundStyle(Color.white)
+                    .font(.title)
+                    .frame(width: 80, height: 80)
+                    .background(Color.gray)
+            }
+        }
+    }
+  }
+  ```
+- Xcode15のPreviewの不具合かはわからないが、.background(Color.gray)を.frame()よりも上に表記すると、.frameが効かないという不具合がある。
