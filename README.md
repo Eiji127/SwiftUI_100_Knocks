@@ -346,3 +346,21 @@ VStack {
   }
   ```
 - Xcode15のPreviewの不具合かはわからないが、.background(Color.gray)を.frame()よりも上に表記すると、.frameが効かないという不具合がある。
+## Knock34
+- ウォークスルー画面（チュートリアル画面）はTabViewを用いて実装する。
+- ページング機能をつけたいときは、TabViewの.tabViewStyleモディファイアで.pageを指定する。
+  ```swift
+  var body: some View {
+    TabView {
+        ContentViewCell(imageName: "Pikachu")
+        ContentViewCell(imageName: "Pikachu")
+        ContentViewCell(imageName: "Pikachu")
+        ContentViewCell(imageName: "Pikachu")
+        ContentViewCell(imageName: "Pikachu")
+    }
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .background(.gray)
+    .tabViewStyle(.page)
+    .menuIndicator(.visible)
+  }
+  ```
