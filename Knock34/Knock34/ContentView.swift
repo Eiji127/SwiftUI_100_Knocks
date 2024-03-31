@@ -9,9 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Image("Pikachu")
-            .resizable()
-            .frame(width: 300, height: 300)
+        TabView {
+            ContentViewCell(imageName: "Pikachu")
+            ContentViewCell(imageName: "Pikachu")
+            ContentViewCell(imageName: "Pikachu")
+            ContentViewCell(imageName: "Pikachu")
+            ContentViewCell(imageName: "Pikachu")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.gray)
+        .tabViewStyle(.page)
+        .menuIndicator(.visible)
     }
 }
 
