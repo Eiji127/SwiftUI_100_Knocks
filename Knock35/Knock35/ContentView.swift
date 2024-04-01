@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var isModalShow: Bool = false
+    @State var isModalShown: Bool = false
     
     var body: some View {
         VStack {
             Button {
-                isModalShow = true
+                isModalShown = true
             } label: {
                 Text("Show ModalView")
             }
         }
-        .fullScreenCover(isPresented: $isModalShow, content: {
-            Text("Showed Modal View")
-        })
+        .sheet(isPresented: $isModalShown) {
+            Text("modal View is shown")
+                .interactiveDismissDisabled()
+        }
     }
 }
 
