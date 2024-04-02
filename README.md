@@ -364,3 +364,14 @@ VStack {
     .menuIndicator(.visible)
   }
   ```
+## Knock35
+- modal viewでスワイプでビューを閉じれないようにするには、遷移先のビューに.interactiveDismissDisabled()を指定する。
+  ```swift
+  VStack {
+    ...
+  }
+  .sheet(isPresented: $isModalShown) {
+    Text("modal View is shown")
+        .interactiveDismissDisabled()
+  }
+  ```
