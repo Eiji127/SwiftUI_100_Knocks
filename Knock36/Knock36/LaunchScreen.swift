@@ -8,23 +8,25 @@
 import SwiftUI
 
 struct LaunchScreen: View {
-    @State var isPreseted: Bool = false
+    @State var viewType: ViewType = .launch
     
     var body: some View {
-        NavigationStack {
-            VStack {
+        ZStack {
+            switch viewType {
+            case .home:
+                Text("Home")
+            case .launch:
                 Image("Pikachu")
                     .resizable()
                     .frame(width: 200, height: 200)
             }
-            .onAppear {
-                Task {
-                    try? await Task.sleep(nanoseconds: UInt64(1 * 1_000_000_000))
-                    isPreseted = true
+        }
+        .onAppear {
+            Task {
+                try? await Task.sleep(nanoseconds: UInt64(3 * 1_000_000_000))
+                withAnimation(.linear(duration: 0.5)) {
+                    viewType = .home
                 }
-            }
-            .navigationDestination(isPresented: $isPreseted) {
-                Text("Second View")
             }
         }
     }
@@ -32,4 +34,9 @@ struct LaunchScreen: View {
 
 #Preview {
     LaunchScreen()
+}
+
+enum ViewType {
+    case launch
+    case home
 }
