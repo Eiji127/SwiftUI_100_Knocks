@@ -375,3 +375,39 @@ VStack {
         .interactiveDismissDisabled()
   }
   ```
+## Knock36
+- LaunchScreenの実装方法
+  1. 列挙型enumでViewTypeを用意し、画面ごとにcaseを設定する。
+     ```swift
+     enum ViewType {
+       case launch
+       case home
+     }
+     ```
+  2. body内でswitch文で切り替える。
+    ```swift
+    ZStack {
+      switch viewType {
+      case .home:
+        Text("Home")
+      case .launch:
+        Image("Pikachu")
+            .resizable()
+            .frame(width: 200, height: 200)
+      }
+    }
+    ```
+  3. .onAppearモディファイアのクロージャ内でwithAnimation関数とsleep関数を用いて、viewTypeを.homeに設定する。
+    ```swift
+    ZStack {
+      ...
+    }
+    .onAppear {
+      Task {
+        try? await Task.sleep(nanoseconds: UInt64(3 * 1_000_000_000))
+        withAnimation(.linear(duration: 0.5)) {
+          viewType = .home
+        }
+      }
+    }
+    ```
