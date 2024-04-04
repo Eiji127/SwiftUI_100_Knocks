@@ -411,3 +411,18 @@ VStack {
       }
     }
     ```
+## Knock37
+- iOS16+の場合は、以下のように.presentationDetentモディファイアを使用することで、ハーフモーダルの実装が簡単に行える。
+  ```swift
+  VStack {
+    Button {
+        isPresented = true
+    } label: {
+        Text("Show Half Modal View")
+    }
+  }
+  .sheet(isPresented: $isPresented) {
+    Text("Showed Half Modal View!!")
+        .presentationDetents([.medium])
+  }
+  ```
