@@ -431,3 +431,8 @@ VStack {
   ```swift
   Text("**Snorlax** is the **most** cute pokemon!\n[About Snorlax](https://en.wikipedia.org/wiki/Snorlax)")
   ```
+## Knock39
+- 表示したいマークダウンのStringを変数として持つと、そのままText()に渡すだけではマークダウンが適用されないため、LocalizedStringKey()の引数にマークダウンの変数を渡し、Textに入れてあげる。
+  ```swift
+  Text(LocalizedStringKey(markdownText))
+  ```
