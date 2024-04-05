@@ -426,3 +426,8 @@ VStack {
         .presentationDetents([.medium])
   }
   ```
+## Knock38
+- マークダウンを実装する場合、Textの方にすでにマークダウンを認識するものは含まれているため、特に複雑な実装を必要としない。
+  ```swift
+  Text("**Snorlax** is the **most** cute pokemon!\n[About Snorlax](https://en.wikipedia.org/wiki/Snorlax)")
+  ```
