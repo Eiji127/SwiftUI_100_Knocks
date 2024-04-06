@@ -436,3 +436,9 @@ VStack {
   ```swift
   Text(LocalizedStringKey(markdownText))
   ```
+## Knock40
+- マークダウンのURL部分の色を変更したいときは.tintモディファイアで色を指定する。
+  ```swift
+  Text(LocalizedStringKey(markdownText))
+    .tint(.red)
+  ```
