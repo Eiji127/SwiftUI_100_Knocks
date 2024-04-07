@@ -8,9 +8,9 @@
 import Foundation
 
 struct GitHubAPIClient {
-    func fetchRepositories(_ query: String) async throws -> [Repository] {
+    func fetchRepositories(page: Int, perPage: Int) async throws -> [Repository] {
         let url = URL(
-            string: "https://api.github.com/search/repositories?q=\(query)&sort=stars"
+            string: "https://api.github.com/search/repositories?q=swift&sort=stars&page=\(page)&per_page=\(perPage)"
         )!
         var request = URLRequest(url: url)
         if let token = Bundle.main.infoDictionary?["GitHubPersonalAccessToken"] as? String {

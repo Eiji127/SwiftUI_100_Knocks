@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State var repositories: [Repository] = []
+    @State var page: Int = 1
     @State var showingErrorAlert = false
+    @State var isFetching: Bool = false
     
     let gitHubAPIClient = GitHubAPIClient()
     
@@ -21,6 +23,11 @@ struct ContentView: View {
                         .font(Font.system(size: 24).bold())
                     Text(repository.description ?? "")
                     Text("Star: \(repository.stargazersCount)")
+                }
+                .onAppear {
+                    if repositories.last == repository {
+                        fetchGitHubRepos()
+                    }
                 }
             }
             .navigationTitle("Repositories")
@@ -38,10 +45,18 @@ struct ContentView: View {
     
     @MainActor
     func fetchGitHubRepos() {
+        if isFetching {
+            return
+        }
+        isFetching = true
+        
         Task {
             do {
-                repositories = try await gitHubAPIClient.fetchRepositories("Swift")
+                repositories = try await gitHubAPIClient.fetchRepositories(page: page, perPage: 20)
+                page += 1
+                isFetching = false
             } catch {
+                isFetching = false
                 showingErrorAlert = true
             }
         }
