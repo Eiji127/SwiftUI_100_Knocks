@@ -17,19 +17,25 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            List(repositories) { repository in
+            List {
                 if isFetching {
-                    ProgressView()
-                } else {
-                    VStack(alignment: .leading) {
-                        Text(repository.fullName)
-                            .font(Font.system(size: 24).bold())
-                        Text(repository.description ?? "")
-                        Text("Star: \(repository.stargazersCount)")
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
                     }
-                    .onAppear {
-                        if repositories.last == repository {
-                            fetchGitHubRepos()
+                } else {
+                    ForEach(repositories) { repository in
+                        VStack(alignment: .leading) {
+                            Text(repository.fullName)
+                                .font(Font.system(size: 24).bold())
+                            Text(repository.description ?? "")
+                            Text("Star: \(repository.stargazersCount)")
+                        }
+                        .onAppear {
+                            if repositories.last == repository {
+                                fetchGitHubRepos()
+                            }
                         }
                     }
                 }
