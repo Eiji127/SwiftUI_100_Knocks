@@ -456,3 +456,17 @@ VStack {
     }
   }
   ```
+## Knock42
+- 一番で下までスクロールした時に追加で情報を取得するときは、Listを表示しているVStackに、onAppearモディファイアを付与し、その中で情報の配列の最後が否かを判断すれば良い。
+  ```swift
+  List(repositories) { repository in
+    VStack(alignment: .leading) {
+        ...
+    }
+    .onAppear {
+        if repositories.last == repository {
+            fetchGitHubRepos()
+        }
+    }
+  }
+  ```
