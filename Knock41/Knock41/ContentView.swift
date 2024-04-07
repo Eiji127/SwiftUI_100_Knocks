@@ -9,17 +9,40 @@ import SwiftUI
 
 struct ContentView: View {
     @State var repositories: [Repository] = []
+    @State var showingErrorAlert = false
+    
+    let gitHubAPIClient = GitHubAPIClient()
     
     var body: some View {
         NavigationStack {
-            List($repositories, id: \.self) { repository in
-//                Text("\(repository.fullName)")
+            List(repositories) { repository in
+                VStack(alignment: .leading) {
+                    Text(repository.fullName)
+                        .font(Font.system(size: 24).bold())
+                    Text(repository.description ?? "")
+                    Text("Star: \(repository.stargazersCount)")
+                }
             }
             .navigationTitle("Repositories")
         }
         .onAppear {
-            Task {
-                repositories = try await GitHubAPIClient().fetchRepositories("concurrency")
+            fetchGitHubRepos()
+        }
+        .alert("Error", isPresented: $showingErrorAlert) {
+            Button("Close", action: {})
+        } message: {
+            Text("Failed to Fetch repositories.")
+        }
+        
+    }
+    
+    @MainActor
+    func fetchGitHubRepos() {
+        Task {
+            do {
+                repositories = try await gitHubAPIClient.fetchRepositories("Swift")
+            } catch {
+                showingErrorAlert = true
             }
         }
     }
