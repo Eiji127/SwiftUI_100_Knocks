@@ -442,3 +442,17 @@ VStack {
   Text(LocalizedStringKey(markdownText))
     .tint(.red)
   ```
+## Knock41
+- APIClientで定義したAPI通信後の返却値をView層に渡す時、View層内でサブメソッドとして定義しておくといい感じになりそう。
+  ```swift
+  @MainActor
+  func fetchGitHubRepos() {
+    Task {
+        do {
+            repositories = try await gitHubAPIClient.fetchRepositories("Swift")
+        } catch {
+            showingErrorAlert = true
+        }
+    }
+  }
+  ```
