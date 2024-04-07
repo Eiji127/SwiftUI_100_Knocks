@@ -470,3 +470,16 @@ VStack {
     }
   }
   ```
+## Knock43
+- ローディングを入れたいときはProgressViewを活用する。
+  ```swift
+  if isFetching {
+    HStack {
+        Spacer()
+        ProgressView()
+        Spacer()
+    }
+  } else {
+    ...
+  }
+  ```
