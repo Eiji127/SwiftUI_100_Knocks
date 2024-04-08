@@ -496,7 +496,7 @@ VStack {
   .textFieldStyle(RoundedBorderTextFieldStyle())
   .padding()
   ```
-- onDeitingChangedのかわりに、PropertyWrapperで@FocusStateを付与したBool型のプロパティを用意し、.focusedモディファイアの引数にそのプロパティを設定する。
+- onEitingChangedのかわりに、PropertyWrapperで@FocusStateを付与したBool型のプロパティを用意し、.focusedモディファイアの引数にそのプロパティを設定する。
   ```swift
   @State var text: String = ""
   @FocusState private var textFieldIsFocused: Bool
