@@ -483,3 +483,33 @@ VStack {
     ...
   }
   ```
+## Knock44
+- TextField(_:text:onEditingChanged:onCommit:)はdeprecatedとなっている。
+  ```swift
+  // ⚠️ init(_:text:onEditingChanged:onCommit:) is deprecated.
+  TextField("Placeholder", text: $text, onEditingChanged: { onEditing in
+    print("onEditingChanged: \(onEditing)")
+    self.onEditing = onEditing
+  }, onCommit: {
+    print("onCommit")
+  })
+  .textFieldStyle(RoundedBorderTextFieldStyle())
+  .padding()
+  ```
+- onDeitingChangedのかわりに、PropertyWrapperで@FocusStateを付与したBool型のプロパティを用意し、.focusedモディファイアの引数にそのプロパティを設定する。
+  ```swift
+  @State var text: String = ""
+  @FocusState private var textFieldIsFocused: Bool
+
+  var body: some View {
+    VStack {
+        Text(textFieldIsFocused ? "On Editing" : "Not On Editing")
+        TextField("Placeholder", text: $text)
+            .focused($textFieldIsFocused)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
+    }
+  }
+  ```
+- onCommitのかわりに、.onSubmitモディファイアを使用する。
+  - .onSubmit (.onCommit)はTextFieldでEnterを押した時に発火する。
