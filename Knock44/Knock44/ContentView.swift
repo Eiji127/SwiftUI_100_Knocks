@@ -8,21 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+
     @State var text: String = ""
-    @State var onEditing: Bool = false
+    @FocusState private var textFieldIsFocused: Bool
     
     var body: some View {
         VStack {
-            Text(onEditing ? "On Editing" : "Not On Editing")
+            Text(textFieldIsFocused ? "On Editing" : "Not On Editing")
             
-            TextField("Placeholder", text: $text, onEditingChanged: { onEditing in
-                print("onEditingChanged: \(onEditing)")
-                self.onEditing = onEditing
-            }, onCommit: {
-                print("onCommit")
-            })
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding()
+            TextField("Placeholder", text: $text)
+                .focused($textFieldIsFocused)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
         }
     }
 }
