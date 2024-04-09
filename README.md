@@ -516,6 +516,7 @@ VStack {
 ## Knock45
 - データの永続化を利用する場合は、基本的にはAppStorageを利用する。
 - AppStorageの基本的な利用方法
+  
   ① PropertyWrapperとして@AppStorageを呼び出し、Keyを登録する。("FAVORITE_POKEMON_NAME"というKeyを今回は登録。)
     ```swift
     @AppStorage("FAVORITE_POKEMON_NAME") var favoritePokemonName: String = ""
