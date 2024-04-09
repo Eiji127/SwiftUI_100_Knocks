@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("FAVORITE_POKEMON_NAME") var favoritePokemonName: String = ""
+    
     var body: some View {
         VStack {
-            Text("Your favorite pokemon is Snorlax")
+            Text("Your favorite pokemon is \(favoritePokemonName)")
                 .padding()
             
             Button {
-                
+                favoritePokemonName = "Snorlax"
             } label: {
                 Text("Snorlax is my favorite pokemon.")
             }
             .padding()
             
             Button {
-                
+                UserDefaults.standard.set("Slowpoke", forKey: "FAVORITE_POKEMON_NAME")
             } label: {
                 Text("Slowpoke is my favorite pokemon.")
             }
