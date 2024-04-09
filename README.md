@@ -513,3 +513,47 @@ VStack {
   ```
 - onCommitのかわりに、.onSubmitモディファイアを使用する。
   - .onSubmit (.onCommit)はTextFieldでEnterを押した時に発火する。
+## Knock45
+- データの永続化を利用する場合は、基本的にはAppStorageを利用する。
+- AppStorageの基本的な利用方法
+  ① PropertyWrapperとして@AppStorageを呼び出し、Keyを登録する。("FAVORITE_POKEMON_NAME"というKeyを今回は登録。)
+    ```swift
+    @AppStorage("FAVORITE_POKEMON_NAME") var favoritePokemonName: String = ""
+    
+    var body: some View {
+      ...
+    }
+    ```
+  ② Key Valueを呼び出すときは、そのままプロパティを呼び出すことで可能。
+    ```swift
+    @AppStorage("FAVORITE_POKEMON_NAME") var favoritePokemonName: String = ""
+    
+    var body: some View {
+        VStack {
+            Text("Your favorite pokemon is \(favoritePokemonName)")
+                .padding()
+            ...
+        }
+        .padding()
+    }
+    ```
+  ③ Key Valueを更新するときは、プロパティの値に直接値を渡してあげることで可能。
+    ```swift
+    @AppStorage("FAVORITE_POKEMON_NAME") var favoritePokemonName: String = ""
+    
+    var body: some View {
+        VStack {
+            ...
+    
+            Button {
+                favoritePokemonName = "Snorlax"
+            } label: {
+                Text("Snorlax is my favorite pokemon.")
+            }
+            .padding()
+            ...
+        }
+        .padding()
+    }
+    ```
+- UIKitの時と同じく、`UserDefaults.standard.set()`でもKeyとKey Valueの操作は可能。(AppStorageとUserDefaultsの双方で内部DBを操作することができる。)
