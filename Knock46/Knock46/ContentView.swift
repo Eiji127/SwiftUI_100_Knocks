@@ -9,19 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            ZStack {
-                Image("Pikachu")
-                    .resizable()
-                    .frame(width: 200, height: 200)
-                
+        Image("Pikachu")
+            .resizable()
+            .frame(width: 200, height: 200)
+            .overlay(
                 Text("@cychow_app")
-                    .frame(width: 200, height: 200)
-                    .background(.black.opacity(0.5))
-                    .foregroundStyle(.white)
-            }
-        }
-        .padding()
+                    .foregroundColor(.white)
+                    .font(.system(size: 20).bold())
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    .background(.black)
+                    .opacity(0.5)
+            )
     }
 }
 
