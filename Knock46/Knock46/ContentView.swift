@@ -12,14 +12,14 @@ struct ContentView: View {
         Image("Pikachu")
             .resizable()
             .frame(width: 200, height: 200)
-            .overlay(
+            .overlay {
                 Text("@cychow_app")
                     .foregroundColor(.white)
                     .font(.system(size: 20).bold())
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
                     .background(.black)
                     .opacity(0.5)
-            )
+            }
     }
 }
 
