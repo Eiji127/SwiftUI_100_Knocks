@@ -558,3 +558,32 @@ VStack {
     }
     ```
 - UIKitの時と同じく、`UserDefaults.standard.set()`でもKeyとKey Valueの操作は可能。(AppStorageとUserDefaultsの双方で内部DBを操作することができる。)
+## Knock46
+- `overlay(_:alignment:)`はdeprecatedとなっているため、`overlay(alignment:content:)`を使用する。
+  ```swift
+  // ⚠️ Deprecated
+  Image("Pikachu")
+    .resizable()
+    .frame(width: 200, height: 200)
+    .overlay(
+        Text("@cychow_app")
+            .foregroundColor(.white)
+            .font(.system(size: 20).bold())
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(.black)
+            .opacity(0.5)
+    )
+
+  // こちらを使用
+  Image("Pikachu")
+    .resizable()
+    .frame(width: 200, height: 200)
+    .overlay {
+        Text("@cychow_app")
+            .foregroundColor(.white)
+            .font(.system(size: 20).bold())
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .background(.black)
+            .opacity(0.5)
+    }
+  ```
