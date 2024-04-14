@@ -11,6 +11,7 @@
 		984AEC0E2BCB7BFD001A747C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AEC0D2BCB7BFD001A747C /* ContentView.swift */; };
 		984AEC102BCB7C00001A747C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984AEC0F2BCB7C00001A747C /* Assets.xcassets */; };
 		984AEC132BCB7C00001A747C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984AEC122BCB7C00001A747C /* Preview Assets.xcassets */; };
+		984AEC1A2BCBD69F001A747C /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AEC192BCBD69F001A747C /* InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		984AEC0D2BCB7BFD001A747C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		984AEC0F2BCB7C00001A747C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		984AEC122BCB7C00001A747C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		984AEC192BCBD69F001A747C /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				984AEC0B2BCB7BFD001A747C /* Knock48App.swift */,
 				984AEC0D2BCB7BFD001A747C /* ContentView.swift */,
+				984AEC192BCBD69F001A747C /* InputView.swift */,
 				984AEC0F2BCB7C00001A747C /* Assets.xcassets */,
 				984AEC112BCB7C00001A747C /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				984AEC1A2BCBD69F001A747C /* InputView.swift in Sources */,
 				984AEC0E2BCB7BFD001A747C /* ContentView.swift in Sources */,
 				984AEC0C2BCB7BFD001A747C /* Knock48App.swift in Sources */,
 			);
