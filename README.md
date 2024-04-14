@@ -587,3 +587,40 @@ VStack {
             .opacity(0.5)
     }
   ```
+## Knock48
+- NavigationLinkを使用することで、画面遷移を伴うButtonの処理を表現することができる。
+  - なので、画面遷移のみを伴う場合はNavigationLinkを、それ以外の処理はButtonを使用するのが良さそう。
+  ```swift
+  // InputViewに遷移するためUI実装
+  NavigationLink(destination: InputView(delegate: self, text: "")) {
+    Text("Add")
+        .foregroundStyle(.white)
+        .font(.system(size: 20))
+  }
+  .frame(width: 60, height: 60)
+  .background(.orange)
+  .clipShape(Circle())
+  .padding()
+  ```
+  <img width="84" alt="スクリーンショット 2024-04-15 8 42 10" src="https://github.com/Eiji127/SwiftUI_100_Knocks/assets/64912886/b035f0c7-fc22-4d32-a799-ca1b325af180">
+- SwiftUIでもDelegateパターンは使用可能。
+- UserDefaultsに保存している配列の値を呼び出すときは、`UserDefaults.standard.array(forKey: "...")`を使用する。
+- `@Environment(\.presentationMode)`はdeprecatedとなっているため、Presentedを検知したいときは`@Environment(\.isPresented)`、dismissを検知したいときは`@Environment(\.dismiss)`を使用すること。
+  ```swift
+  struct InputView: View {
+    @Environment(\.dismiss) var dismiss
+    let delegate: InputViewDelegate
+    @State var text: String
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            ...
+            Button("Add") {
+                delegate.addTodo(text: text)
+                dismiss()
+            }
+        }
+        .padding()
+    }
+  }
+  ```
