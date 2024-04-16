@@ -624,3 +624,18 @@ VStack {
     }
   }
   ```
+## Knock49
+- NSObjectを継承するのに、ContenViewはstructであるためにViewModelをclassとして用意し、継承している。
+- 音楽再生はAVFoundationをimportする。
+- mp3ファイルはプロジェクト内であれば、どこでも良い。(Resourcesフォルダ内に格納した)
+- mp3ファイルを読み込むときは `Bundle.main.url` メソッドを活用する。
+  ```swift
+  func playAudio() {
+    guard let url = Bundle.main.url(forResource: "melody", withExtension: "mp3") else {
+        return
+    }
+    audioPlayer = try! AVAudioPlayer(contentsOf: url)
+    audioPlayer?.delegate = self
+    audioPlayer?.play()
+  }
+  ```
