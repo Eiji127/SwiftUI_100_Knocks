@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = ContentViewModel()
+    
     var body: some View {
         Button {
-            
+            viewModel.playAudio()
         } label: {
             Text("Play")
         }

@@ -11,6 +11,8 @@
 		984AEC2A2BCEACD5001A747C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AEC292BCEACD5001A747C /* ContentView.swift */; };
 		984AEC2C2BCEACD7001A747C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984AEC2B2BCEACD7001A747C /* Assets.xcassets */; };
 		984AEC2F2BCEACD7001A747C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984AEC2E2BCEACD7001A747C /* Preview Assets.xcassets */; };
+		984AEC362BCEAD7D001A747C /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984AEC352BCEAD7D001A747C /* ContentViewModel.swift */; };
+		984AEC382BCEC67B001A747C /* melody.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 984AEC372BCEC67B001A747C /* melody.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		984AEC292BCEACD5001A747C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		984AEC2B2BCEACD7001A747C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		984AEC2E2BCEACD7001A747C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		984AEC352BCEAD7D001A747C /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		984AEC372BCEC67B001A747C /* melody.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = melody.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,9 @@
 			children = (
 				984AEC272BCEACD5001A747C /* Knock49App.swift */,
 				984AEC292BCEACD5001A747C /* ContentView.swift */,
+				984AEC352BCEAD7D001A747C /* ContentViewModel.swift */,
 				984AEC2B2BCEACD7001A747C /* Assets.xcassets */,
+				984AEC372BCEC67B001A747C /* melody.mp3 */,
 				984AEC2D2BCEACD7001A747C /* Preview Content */,
 			);
 			path = Knock49;
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				984AEC382BCEC67B001A747C /* melody.mp3 in Resources */,
 				984AEC2F2BCEACD7001A747C /* Preview Assets.xcassets in Resources */,
 				984AEC2C2BCEACD7001A747C /* Assets.xcassets in Resources */,
 			);
@@ -139,6 +146,7 @@
 			files = (
 				984AEC2A2BCEACD5001A747C /* ContentView.swift in Sources */,
 				984AEC282BCEACD5001A747C /* Knock49App.swift in Sources */,
+				984AEC362BCEAD7D001A747C /* ContentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
