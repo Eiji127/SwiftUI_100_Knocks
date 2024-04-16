@@ -58,8 +58,7 @@
 				984AEC272BCEACD5001A747C /* Knock49App.swift */,
 				984AEC292BCEACD5001A747C /* ContentView.swift */,
 				984AEC352BCEAD7D001A747C /* ContentViewModel.swift */,
-				984AEC2B2BCEACD7001A747C /* Assets.xcassets */,
-				984AEC372BCEC67B001A747C /* melody.mp3 */,
+				984AEC392BCEC9A7001A747C /* Resources */,
 				984AEC2D2BCEACD7001A747C /* Preview Content */,
 			);
 			path = Knock49;
@@ -71,6 +70,15 @@
 				984AEC2E2BCEACD7001A747C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		984AEC392BCEC9A7001A747C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				984AEC372BCEC67B001A747C /* melody.mp3 */,
+				984AEC2B2BCEACD7001A747C /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
