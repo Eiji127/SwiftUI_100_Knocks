@@ -11,6 +11,7 @@
 		98AFB7662BD1519D00DD2104 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFB7652BD1519D00DD2104 /* ContentView.swift */; };
 		98AFB7682BD1519F00DD2104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98AFB7672BD1519F00DD2104 /* Assets.xcassets */; };
 		98AFB76B2BD1519F00DD2104 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98AFB76A2BD1519F00DD2104 /* Preview Assets.xcassets */; };
+		98AFB7722BD1547D00DD2104 /* PokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98AFB7712BD1547C00DD2104 /* PokemonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		98AFB7652BD1519D00DD2104 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98AFB7672BD1519F00DD2104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98AFB76A2BD1519F00DD2104 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98AFB7712BD1547C00DD2104 /* PokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				98AFB7632BD1519D00DD2104 /* Knock50App.swift */,
 				98AFB7652BD1519D00DD2104 /* ContentView.swift */,
+				98AFB7712BD1547C00DD2104 /* PokemonView.swift */,
 				98AFB7672BD1519F00DD2104 /* Assets.xcassets */,
 				98AFB7692BD1519F00DD2104 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98AFB7722BD1547D00DD2104 /* PokemonView.swift in Sources */,
 				98AFB7662BD1519D00DD2104 /* ContentView.swift in Sources */,
 				98AFB7642BD1519D00DD2104 /* Knock50App.swift in Sources */,
 			);

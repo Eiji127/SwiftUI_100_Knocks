@@ -9,17 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
 
-    var text: String = "Pikachu"
-    @State var showingModal: Bool = false
+    @State var name: String = ""
+    @State var showingSheet: Bool = false
     
     var body: some View {
-        Button {
-            showingModal = true
-        } label: {
-            Text("Tap Me!!")
+        VStack(spacing: 16) {
+            TextField("Input Name", text: $name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            Text("Name: \(name)")
+            
+            Button {
+                showingSheet = true
+            } label: {
+                Text("Show Modal")
+                    .font(Font.system(size: 20))
+                    .foregroundStyle(.white)
+                    .padding(16)
+                    .background(.gray)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                
+            }
         }
-        .sheet(isPresented: $showingModal) {
-            Text(text)
+        .sheet(isPresented: $showingSheet) {
+            PokemonView(name: name)
         }
     }
 }
