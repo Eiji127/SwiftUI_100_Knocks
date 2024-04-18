@@ -639,3 +639,17 @@ VStack {
     audioPlayer?.play()
   }
   ```
+## Knock50
+- モーダルビュー (sheet)で値を渡すときは、表示したいビューの引数に値を渡すのが良い。
+  ```swift
+  ...
+  
+  @State var name: String = ""
+  
+  VStack {
+    ...
+  }
+  .sheet(isPresented: $showingSheet) {
+    PokemonView(name: name)
+  }
+  ```
