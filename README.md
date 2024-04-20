@@ -653,3 +653,13 @@ VStack {
     PokemonView(name: name)
   }
   ```
+## Knock51
+- TextFieldのキーバードをナンバーパッドに指定したい場合は `.keyboardType(.namePhonePad)` を指定する。
+  ```swift
+  TextField("Input Your Height", text: $height)
+    .keyboardType(.namePhonePad)
+  ```
+- 別画面に値の変化を共有する場合は別画面で `@Binding` を指定しておく。
+  ```swfit
+  @Binding var result: Double
+  ```
