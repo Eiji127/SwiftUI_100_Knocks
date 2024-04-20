@@ -663,3 +663,48 @@ VStack {
   ```swfit
   @Binding var result: Double
   ```
+## Knock52
+- @Bindingを使用することで、Viewファイルを跨いで値の制御を行うことができる。
+  - 今回だとContentViewの `showingPopUp` とPopUpViewの `isPresent` が紐づいている。
+  ```swift
+  struct ContentView: View {
+    
+    @State var showingPopUp: Bool = false
+    
+    var body: some View {
+        ZStack {
+            Button {
+                showingPopUp = true
+            } label: {
+                Text("Tap Me!!")
+                    .padding()
+                    .background(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+            
+            if showingPopUp {
+                PopUpView(isPresent: $showingPopUp)
+            }
+        }
+        ...
+    }
+  }
+
+  
+  struct PopUpView: View {
+    @Binding var isPresent: Bool
+    
+    var body: some View {
+        VStack(spacing: 12) {
+            Button {
+                withAnimation {
+                    isPresent = false
+                }
+            } label: {
+                Text("Close")
+            }
+        }
+        ...
+    }
+  }
+  ```
