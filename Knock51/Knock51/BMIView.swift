@@ -9,19 +9,20 @@ import SwiftUI
 
 struct BMIView: View {
     
-    var height: Int
-    var weight: Int
-    var bmi: Int = 0
+    @Binding var result: Double
     
     var body: some View {
-        Text(String(bmi))
-            .font(.system(size: 30))
-            .onAppear {
-//                bmi = weight/(height * height)
+        VStack {
+            Text(String(result))
+                .font(.system(size: 30))
+            
+            if result < 18.5 {
+                Text("You are thin")
+            } else if result > 25 {
+                Text("You are fat")
+            } else {
+                Text("You are healthy")
             }
+        }
     }
-}
-
-#Preview {
-    BMIView(height: 170, weight: 58)
 }
