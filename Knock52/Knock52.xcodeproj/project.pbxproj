@@ -11,6 +11,7 @@
 		98B865882BD3DC92006ED13E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B865872BD3DC92006ED13E /* ContentView.swift */; };
 		98B8658A2BD3DC93006ED13E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B865892BD3DC93006ED13E /* Assets.xcassets */; };
 		98B8658D2BD3DC93006ED13E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B8658C2BD3DC93006ED13E /* Preview Assets.xcassets */; };
+		98B865942BD3E112006ED13E /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B865932BD3E112006ED13E /* PopUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		98B865872BD3DC92006ED13E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		98B865892BD3DC93006ED13E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98B8658C2BD3DC93006ED13E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		98B865932BD3E112006ED13E /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				98B865852BD3DC92006ED13E /* Knock52App.swift */,
 				98B865872BD3DC92006ED13E /* ContentView.swift */,
+				98B865932BD3E112006ED13E /* PopUpView.swift */,
 				98B865892BD3DC93006ED13E /* Assets.xcassets */,
 				98B8658B2BD3DC93006ED13E /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B865942BD3E112006ED13E /* PopUpView.swift in Sources */,
 				98B865882BD3DC92006ED13E /* ContentView.swift in Sources */,
 				98B865862BD3DC92006ED13E /* Knock52App.swift in Sources */,
 			);

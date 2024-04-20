@@ -12,14 +12,23 @@ struct ContentView: View {
     @State var showingPopUp: Bool = false
     
     var body: some View {
-        Button {
-            showingPopUp = true
-        } label: {
-            Text("Tap Me!!")
+        ZStack {
+            Button {
+                showingPopUp = true
+            } label: {
+                Text("Tap Me!!")
+                    .padding()
+                    .background(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+            }
+            
+            if showingPopUp {
+                PopUpView(isPresent: $showingPopUp)
+            }
         }
-        .popover(isPresented: $showingPopUp) {
-            Text("Showed Pop Up")
-        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(.gray)
+        .ignoresSafeArea()
     }
 }
 
