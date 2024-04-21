@@ -708,3 +708,18 @@ VStack {
     }
   }
   ```
+## Knock53
+- 横スクロールを実現したいときは、`ScrollView` × `LazyHStack` を使用する。
+  ```swift
+  ScrollView(.horizontal, showsIndicators: false) {
+    LazyHStack(spacing: 12) {
+        ForEach(0..<8, id: \.self) { index in
+            Image("Pikachu")
+                .resizable()
+                .frame(width: 100, height: 100)
+        }
+    }
+    .padding(.horizontal, 12)
+  } 
+  .frame(height: 100)
+  ```
