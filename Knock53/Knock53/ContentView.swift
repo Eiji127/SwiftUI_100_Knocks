@@ -8,16 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    let grids = [GridItem(.fixed(20))]
-    
     var body: some View {
-        LazyHGrid(rows: grids) {
-            ForEach(0..<8, id: \.self) { index in
-                Image("Pikachu")
-                    .resizable()
-                    .frame(width: 100, height: 100)
+        VStack(alignment: .leading) {
+            Text("Pokemon")
+                .font(.title2)
+                .padding()
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 12) {
+                    ForEach(0..<8, id: \.self) { index in
+                        Image("Pikachu")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                    }
+                }
+                .padding(.horizontal, 12)
             }
+            .frame(height: 100)
         }
     }
 }
