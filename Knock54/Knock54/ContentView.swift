@@ -9,25 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     @State var isToggleOn: Bool = false
-    @State var buttonCondition: String = ""
-    @State var color = Color.orange
     
     var body: some View {
         VStack {
-            HStack {
-                Text("isEnable: ")
-                Toggle(isOn: $isToggleOn) {
-                    
-                }
+            Toggle(isOn: $isToggleOn) {
+                Text("isEnable: \(isToggleOn.description)")
             }
             Button {
-                
+                print("DEBUG: TAPPED BUTTON!!")
             } label: {
-                Text("Tap Me!!")
+                Text("Tap Me!! \(isToggleOn ? "Enable" : "Disable")")
             }
             .foregroundStyle(.white)
             .frame(width: 150, height: 50)
-            .background(color)
+            .background(isToggleOn ? .orange : .gray)
+            .disabled(!isToggleOn)
         }
         .padding()
     }
