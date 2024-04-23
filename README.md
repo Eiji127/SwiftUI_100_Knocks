@@ -723,3 +723,5 @@ VStack {
   } 
   .frame(height: 100)
   ```
+## Knock54
+- Bool値は `isToggleOn.description` というようにすることで値を出力することができる。
