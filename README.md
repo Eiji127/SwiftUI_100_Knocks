@@ -725,7 +725,7 @@ VStack {
   ```
 ## Knock54
 - Bool値は `isToggleOn.description` というようにすることで値を出力することができる。
-## Knock56
+## Knock55
 - TextFieldのキーボードの種類は .keyboardTypeモディファイアで指定する。
 - また、TextFieldの枠線は.textFieldStyleモディファイアで指定する。
   ```swift
