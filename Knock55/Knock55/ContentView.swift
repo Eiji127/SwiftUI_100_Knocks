@@ -12,8 +12,9 @@ struct ContentView: View {
     
     var body: some View {
         TextField("Input Number", text: $text)
-            .padding()
+            .textFieldStyle(RoundedBorderTextFieldStyle())
             .keyboardType(.numberPad)
+            .padding()
     }
 }
 
