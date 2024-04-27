@@ -733,3 +733,29 @@ VStack {
     .textFieldStyle(RoundedBorderTextFieldStyle())
     .keyboardType(.numberPad)
   ```
+## Knock56
+- 画面間で親Viewで定義した変数を、子View内でBindingした変数として定義し、渡していく。
+  - 子Viewで値が変更された時に親Viewに値変更を反映させることができる。
+  ```swift
+  struct ContentView: View {
+    @State var showingSheet: Bool = false
+    ...
+  }
+
+  struct SecondView: View {
+    @Binding var isPresented: Bool
+    ...
+  }
+
+  struct ThirdView: View {
+    @Binding var showingSheet: Bool
+    
+    var body: some View {
+        Button {
+            showingSheet = false
+        } label: {
+            ...
+        }
+    }
+  } 
+  ```
