@@ -8,22 +8,20 @@
 import SwiftUI
 
 struct SecondView: View {
-    @State var isPresented: Bool = false
+    @Binding var isPresented: Bool
 
     var body: some View {
         NavigationStack {
-            Button {
-                isPresented = true
+            NavigationLink {
+                ThirdView(showingSheet: $isPresented)
             } label: {
-                Text("Show Third View.")
+                Text("Go to Third View")
             }
-            .navigationDestination(isPresented: $isPresented) {
-                ThirdView()
-            }
+
         }
     }
 }
 
 #Preview {
-    SecondView()
+    SecondView(isPresented: .constant(true))
 }

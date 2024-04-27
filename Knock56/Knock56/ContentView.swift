@@ -17,7 +17,7 @@ struct ContentView: View {
             Text("Tap me!")
         }
         .sheet(isPresented: $showingSheet) {
-            SecondView()
+            SecondView(isPresented: $showingSheet)
         }
     }
 }

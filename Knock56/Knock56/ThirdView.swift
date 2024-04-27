@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ThirdView: View {
-    @Environment(\.dismiss) var dismiss
+    @Binding var showingSheet: Bool
     
     var body: some View {
         Button {
-            dismiss()
+            showingSheet = false
         } label: {
             Text("Dimiss view")
         }
@@ -20,5 +20,5 @@ struct ThirdView: View {
 }
 
 #Preview {
-    ThirdView()
+    ThirdView(showingSheet: .constant(false))
 }
