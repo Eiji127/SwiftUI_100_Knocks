@@ -759,3 +759,23 @@ VStack {
     }
   } 
   ```
+## Knock57
+- Listの並び替えはForEachのclosureに.onMoveモディファイアを付与し、値を設定することで可能となる。
+  - Listの設定ボタンとしてEditButtonをNavigationのheaderに用意しておく。
+  ```swift
+  NavigationStack {
+    List {
+        ForEach(pokemons, id: \.self) { pokemon in
+            ...
+        }
+        .onMove { (indexSet, index) in
+            pokemons.move(fromOffsets: indexSet, toOffset: index)
+        }
+    }
+    .toolbar {
+        ToolbarItem(placement: .primaryAction) {
+            EditButton()
+        }
+    }
+  }
+  ```
