@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var editMode: EditMode = .active
-    
-    let pokemons = ["Pikachu", "Snorlax", "Meowth"]
+    @State var pokemons = ["Pikachu", "Snorlax", "Meowth"]
     
     var body: some View {
         NavigationStack {
@@ -18,7 +16,11 @@ struct ContentView: View {
                 ForEach(pokemons, id: \.self) { pokemon in
                     Text(pokemon)
                 }
+                .onMove { (indexSet, index) in
+                    pokemons.move(fromOffsets: indexSet, toOffset: index)
+                }
             }
+            .navigationTitle("Pokemon List")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     EditButton()
