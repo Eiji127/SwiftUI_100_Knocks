@@ -779,3 +779,19 @@ VStack {
     }
   }
   ```
+## Knock58
+- List内のSpacer部分もタップ領域にしたい場合は、HStackとSpacerを駆使することでタップ判定を追加する。
+  ```swift
+  List {
+    ForEach(pokemons, id: \.self) { pokemon in
+        HStack {
+            Text(pokemon.name)
+            Spacer()
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            print(pokemon)
+        }
+    }
+  }
+  ```
