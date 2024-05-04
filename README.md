@@ -795,3 +795,35 @@ VStack {
     }
   }
   ```
+## Knock59
+- List内のCell内でボタンを複数個設置したい時、Buttonに..buttonStyle(PlainButtonStyle())モディファイアを指定することで、それぞれのボタンをタップすることができるようなる。
+  - .buttonStyle(PlainButtonStyle())がないと、セル全体で全てのボタンがタップされたり、.onTapGesture内の処理が優先されたりする...
+```swift
+List(pokemons, id: \.self) { pokemon in
+    HStack {
+        ...
+        
+        Button {
+            print("DEBUG: Tapped Left Button")
+        } label: {
+            Text("Left")
+                .padding()
+        }
+        .buttonStyle(PlainButtonStyle())
+        .border(.green)
+        
+        Button {
+            print("DEBUG: Tapped Right Button")
+        } label: {
+            Text("Right")
+                .padding()
+        }
+        .buttonStyle(PlainButtonStyle())
+        .border(.green)
+    }
+    .contentShape(Rectangle())
+    .onTapGesture {
+        print("DEBUG: Tapped Cell")
+    }
+}
+```
