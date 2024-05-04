@@ -16,7 +16,6 @@ struct ContentView: View {
     
     var body: some View {
         List(pokemons, id: \.self) { pokemon in
-            
             HStack {
                 Text(pokemon.name)
                 
@@ -28,6 +27,7 @@ struct ContentView: View {
                     Text("Left")
                         .padding()
                 }
+                .buttonStyle(PlainButtonStyle())
                 .border(.green)
                 
                 Button {
@@ -36,7 +36,12 @@ struct ContentView: View {
                     Text("Right")
                         .padding()
                 }
+                .buttonStyle(PlainButtonStyle())
                 .border(.green)
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                print("DEBUG: Tapped Cell")
             }
         }
     }
