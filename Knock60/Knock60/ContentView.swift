@@ -16,19 +16,32 @@ struct ContentView: View {
     ]
     
     @State var word: String = ""
+    var filtredPokemons: [Pokemon] {
+        if word.isEmpty {
+            return pokemons
+        } else {
+            return pokemons.filter {
+                $0.name.uppercased().contains(
+                    word.uppercased()
+                )
+            }
+        }
+    }
     
     var body: some View {
-        NavigationStack {
-            List(pokemons, id: \.self) { pokemon in
-                if word == "" {
-                    Text(pokemon.name)
-                } else if pokemon.name.lowercased().contains(word) {
-                    Text(pokemon.name)
+        ScrollView {
+            LazyVStack {
+                TextField("Type your search", text: $word)
+                    .padding(8)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                ForEach(filtredPokemons, id: \.self) { pokemon in
+                    VStack(alignment: .leading) {
+                        Text(pokemon.name)
+                            .padding(.leading, 12)
+                        Divider()
+                    }
                 }
             }
-            .searchable(text: $word,
-                        placement: .navigationBarDrawer,
-                        prompt: "Type your search")
         }
     }
 }
