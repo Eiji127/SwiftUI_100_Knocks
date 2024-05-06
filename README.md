@@ -843,7 +843,7 @@ List(pokemons, id: \.self) { pokemon in
                 prompt: "Type your search")
   }
   ```
-- 任意の文字列が含まれるかの判定は以下の記事を参照
+- 任意の文字列が含まれるかの判定は以下の記事を参照  
   https://qiita.com/osamu1203/items/3ee63291c37d91428b55
 - Viewに値を渡す時はすでに編集済みの値を渡す形が良い。
   ```swift
