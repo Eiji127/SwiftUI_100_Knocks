@@ -827,3 +827,41 @@ List(pokemons, id: \.self) { pokemon in
     }
 }
 ```
+## Knock60
+- iOS15+では.searchableモディファイアを使用することで簡単にSearch Barを実装することができる。
+  ```swift
+  NavigationStack {
+    List(pokemons, id: \.self) { pokemon in
+        if word == "" {
+            Text(pokemon.name)
+        } else if pokemon.name.lowercased().contains(word) {
+            Text(pokemon.name)
+        }
+    }
+    .searchable(text: $word,
+                placement: .navigationBarDrawer,
+                prompt: "Type your search")
+  }
+  ```
+- 任意の文字列が含まれるかの判定は以下の記事を参照
+  https://qiita.com/osamu1203/items/3ee63291c37d91428b55
+- Viewに値を渡す時はすでに編集済みの値を渡す形が良い。
+  ```swift
+  var filtredPokemons: [Pokemon] {
+    if word.isEmpty {
+        return pokemons
+    } else {
+        return pokemons.filter {
+            $0.name.uppercased().contains(
+                word.uppercased()
+            )
+        }
+    }
+  }
+
+  var body: some View {
+    ...
+    Text(pokemon.name)
+      .padding(.leading, 12)
+  }
+  ```
