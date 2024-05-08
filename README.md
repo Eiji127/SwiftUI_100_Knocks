@@ -865,3 +865,36 @@ List(pokemons, id: \.self) { pokemon in
       .padding(.leading, 12)
   }
   ```
+## Knock61
+- TextFieldにClearButtonを追加したい時はZStackあるいはoverlay modifierを用いることで実装できる。
+  - ViewModifierを用いた方法
+    ```swift
+    struct TextFieldClearButton: ViewModifier {
+      @Binding var text: String
+    
+      func body(content: Content) -> some View {
+        content
+          .overlay {
+            if text != "" {
+              HStack {
+                Spacer()
+                  Button {
+                    text = ""
+                  } label: {
+                    Image(systemName: "delete.left")
+                      .foregroundColor(.secondary)
+                      .padding(.trailing, 4)
+                  }
+                  .padding()
+              }
+            }
+          }
+      }
+    }
+
+    extension View {
+      func showClearButton(_ text: Binding<String>) -> some View {
+        self.modifier(TextFieldClearButton(text: text))
+      }
+    }
+    ```
