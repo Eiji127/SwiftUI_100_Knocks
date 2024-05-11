@@ -16,13 +16,16 @@ extension CLLocationCoordinate2D {
 }
 
 struct ContentView: View {
-    @State private var position: MapCameraPosition = .automatic
+    @State private var position: MapCameraPosition = .region(
+        MKCoordinateRegion(
+            center: .akihabara,
+            latitudinalMeters: 300,
+            longitudinalMeters: 300
+        )
+    )
     
     var body: some View {
-        Map(position: $position) {
-            Annotation("", coordinate: .akihabara) {}
-        }
-        .mapStyle(.standard)
+        Map(position: $position)
     }
 }
 
