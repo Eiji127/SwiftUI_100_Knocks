@@ -898,3 +898,27 @@ List(pokemons, id: \.self) { pokemon in
       }
     }
     ```
+## Knock62
+- CLLocationCoordinate2Dのextensionで具体的な座標を変数として登録しておくと便利。
+  ```swift
+  extension CLLocationCoordinate2D {
+    static let akihabaraUdx = CLLocationCoordinate2D(
+        latitude: 35.7005,
+        longitude: 139.7726
+    )
+  }
+  ```
+- Mapの初期位置は以下のように設定することができる。
+  ```swift
+  @State private var position: MapCameraPosition = .region(
+    MKCoordinateRegion(
+        center: .akihabara,
+        latitudinalMeters: 100,
+        longitudinalMeters: 100
+    )
+  )
+
+  var body: some View {
+    Map(position: $position)
+  }
+  ```
