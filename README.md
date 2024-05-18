@@ -958,3 +958,26 @@ List(pokemons, id: \.self) { pokemon in
       }
     }
     ```
+## Knock64
+- MapにAnnotationのようなものを用意したい時はAnnotationを活用する。
+  ```swift
+  Map(
+    initialPosition:
+        MapCameraPosition.region(
+            MKCoordinateRegion(
+                center: location,
+                latitudinalMeters: 300,
+                longitudinalMeters: 300
+            )
+        )
+  ) {
+    Annotation("User", coordinate: location) {
+        ZStack {
+            RoundedRectangle(cornerRadius: 25)
+                .frame(width: 50, height: 50)
+                .foregroundStyle(.red)
+        }
+    }
+    .annotationTitles(.hidden)
+  }
+  ```
