@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var recordingStatus: RecordingStatus = .ready
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            CameraView(recordingStatus: $recordingStatus) { url in
+                recordingStatus = .ready
+                print(url)
+            }
+            .frame(width: 300, height: 400)
+            
+            Button {
+                recordingStatus = .start
+            } label: {
+                Text("Start")
+            }
+            
+            Button {
+                recordingStatus = .stop
+            } label: {
+                Text("Stop")
+            }
+            Text("StartRecording: \(recordingStatus.rawValue)")
         }
-        .padding()
     }
 }
 
