@@ -981,3 +981,7 @@ List(pokemons, id: \.self) { pokemon in
     .annotationTitles(.hidden)
   }
   ```
+## Knock65 (SwiftUIでカメラを使い撮影する)
+- SwiftUIでカメラを使いたい時はAVFoundationを使用する。
+- 画質設定時にbeginConfiguration()とcommitConfiguration()をしっかり呼び出さないと以下のエラーが出るため注意が必要。
+  `[AVCaptureSession startRunning] startRunning may not be called between calls to beginConfiguration and commitConfiguration'`
