@@ -985,3 +985,14 @@ List(pokemons, id: \.self) { pokemon in
 - SwiftUIでカメラを使いたい時はAVFoundationを使用する。
 - 画質設定時にbeginConfiguration()とcommitConfiguration()をしっかり呼び出さないと以下のエラーが出るため注意が必要。
   `[AVCaptureSession startRunning] startRunning may not be called between calls to beginConfiguration and commitConfiguration'`
+## Knock66 (SwiftUIでスライダーとスクロールを連動させる)
+- UIKitのViewをSwiftUIのViewで使用するためには、SwiftUIのViewに対してUIViewRepresentableを準拠させることによって、UIKitのViewをWrapできる。
+  ```swift
+  struct TextScrollView: UIViewRepresentable {
+    ...
+  }
+
+  public class UITextScrollView: UIView {
+    ...
+  }
+  ```
